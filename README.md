@@ -14,8 +14,8 @@ To enable GPU support, please do enable CUDA-11 in windows/linux/mac virtual env
 - python training.py 
 
 #### Score
-- Training accuracy after 5-epoch sequence acc ~ 99% and slot acc ~96%
-- Validation accuracy sequence acc ~ 99% and slot acc ~96%
+- Training accuracy after 5-epoch : sequence acc ~ 99% and slot acc ~96%
+- Validation accuracy : sequence acc ~ 99% and slot acc ~96%
 
 #### Acknowledgement:
 @article https://arxiv.org/pdf/1805.10190.pdf
