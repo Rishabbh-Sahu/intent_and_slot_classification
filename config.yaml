@@ -1,0 +1,13 @@
+# important paths data/model etc.
+data_path : './data/snips/'
+model_path : 'https://tfhub.dev/tensorflow/small_bert/bert_en_uncased_L-2_H-128_A-2/1'
+saved_model_dir_path : 'saved_models'
+model_name : 'temp'
+model_version : 'v1'
+
+# Model parameters
+MAX_SEQ_LEN : 30
+LEARNING_RATE : 5e-5
+DROPOUT_RATE : 0.5 #0.2
+BATCH_SIZE : 16
+EPOCHS : 1

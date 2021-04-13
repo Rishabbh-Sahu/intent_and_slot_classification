@@ -1,0 +1,16 @@
+Number of intents :  80
+
+Total :  230159
+Train data size: 176491
+Valid data size: 19656
+Test data size: 34012
+
+Q1 quantile of seq_len :  7.0
+Q2 quantile/Median of seq_len :  10.0
+Q3 quantile of seq_len :  13.0
+95th quantile of seq_len :  22.0
+99th quantile of seq_len :  57.0
+Maximum sequence length: 120
+Minimum sequence length: 2
+
+Time Taken: 222.610333442688 secs
