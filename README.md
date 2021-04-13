@@ -1,6 +1,8 @@
 # intent_and_slot_classification
 #### About this project
-One of the main NLU tasks is to understand the intents (sequence classification) and slots (entities within the sequence). This repo help classify both together using Joint Model (multitask model). BERT_SMALL is used which can be changed to any other BERT variant. To enable GPU support, please do enable CUDA-11 in windows/linux/mac virtual environment for tf2.4 or use CUDA 10.1 for tf2.3.
+One of the main NLU tasks is to understand the intent (sequence classification) and slots (entities within the sequence) and this repo helps you do the same. By extracting this knowledge about the queries, you can comprehend the context and take appropriate decisions. This repo help classify both together using Joint Model architecture (multitask model). Pretrained model BERT_SMALL is used to achieve transfer learning however it can be changed to any other BERT variants. Supports for various models like albert, mobilebert etc. would be availalble soon!. 
+
+To enable GPU support, please do enable CUDA-11 in windows/linux/mac virtual environment for tf2.4 or use CUDA 10.1 for tf2.3.
 
 #### Getting started
 - create virtual environment
