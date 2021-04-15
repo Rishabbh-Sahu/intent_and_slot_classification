@@ -63,12 +63,9 @@ class JOINT_TEXT_MODEL():
         slot_classifier = Dense(self.num_slot_classes, activation='softmax', name='slot_classifier')(sequence_output)
         self.model = Model(inputs=inputs, outputs=[slot_classifier, sequence_classifier], name=self.name)
 
-    def fit(self, X, Y, validation_data=None, epochs=5, batch_size=16):
-        """
-        X: batch of [input_ids, input_mask, segment_ids]
-        """
+    def fit(self, train_X, train_Y, validation_data=None, epochs=5, batch_size=16):
         self.model_params.update({'epochs': epochs, 'batch_size': batch_size})
-        history = self.model.fit(X, Y, validation_data=validation_data,
+        history = self.model.fit(train_X, train_Y, validation_data=validation_data,
                                  epochs=epochs, batch_size=batch_size, shuffle=False, verbose=2)
 
     def predict(self, x):
