@@ -31,6 +31,7 @@ train_text_arr, train_tags_arr, train_intents = Reader.read(data_path+'train/')
 val_text_arr, val_tags_arr, val_intents = Reader.read(data_path+'valid/')
 data_text_arr, data_tags_arr, data_intents = Reader.read(data_path+'test/')
 
+print('data pre-processing...')
 train_text_arr = preprocessing.remove_next_line(train_text_arr)
 train_tags_arr = preprocessing.remove_next_line(train_tags_arr)
 train_intents = preprocessing.remove_next_line(train_intents)
@@ -47,7 +48,7 @@ data_intents = preprocessing.remove_next_line(data_intents)
 print('Test data size :',len(data_text_arr))
 
 class_dist = Counter(train_intents)
-print('Intents & Distributions:',class_dist)
+print('classes & distributions:',class_dist)
 
 print('encode sequence labels ...')
 sequence_label_encoder = vectorizer.label_encoder(train_intents)
@@ -76,6 +77,7 @@ train_tags = np.array([model_tokenizer.get_tag_labels(text,tag_labels,slot_encod
 val_tags = np.array([model_tokenizer.get_tag_labels(text,tag_labels,slot_encoder) \
                      for (text,tag_labels) in zip(val_text_arr,val_tags_arr)])
 
+print('training started ...')
 model.fit(train,[train_tags,train_sequence_labels],validation_data=(val,[val_tags,val_sequence_labels]),
           epochs=config['EPOCHS'],batch_size=config['BATCH_SIZE'])
 
