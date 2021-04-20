@@ -16,6 +16,7 @@ from text_preprocessing import vectorizer,preprocessing
 from text_preprocessing.vectorizer import BERT_PREPROCESSING
 from model import JOINT_TEXT_MODEL
 
+print("system specification...")
 print("TensorFlow Version:",tf.__version__)
 print("Hub version: ",hub.__version__)
 print('GPU is in use:',tf.config.list_physical_devices('GPU'))
@@ -80,6 +81,7 @@ val_tags = np.array([model_tokenizer.get_tag_labels(text,tag_labels,slot_encoder
 print('training started ...')
 model.fit(train,[train_tags,train_sequence_labels],validation_data=(val,[val_tags,val_sequence_labels]),
           epochs=config['EPOCHS'],batch_size=config['BATCH_SIZE'])
+print('training completed ...')
 
 # Model evaluation
 query = 'could you please play songs from james blunt'
