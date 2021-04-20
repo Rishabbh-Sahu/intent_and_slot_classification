@@ -41,6 +41,7 @@ class JOINT_TEXT_MODEL():
             'slot_classifier': 'sparse_categorical_crossentropy',
             'sequence_classifier': 'sparse_categorical_crossentropy',
         }
+        # this will enable us to calculate joint Loss for sequence and slot classification
         loss_weights = {'slot_classifier': 3.0, 'sequence_classifier': 1.0}
         metrics = {
             'slot_classifier': 'acc',

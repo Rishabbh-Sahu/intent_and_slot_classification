@@ -9,11 +9,22 @@ import numpy as np
 from tqdm import tqdm
 
 def label_encoder(unique_classes):
+    '''
+    This routine helps establish the mapping of unique classes to their numeric equivalent
+    unique_classes: list [] - unique set of classes to be mapped
+    return: model fitted on unique classes to transform where ever required
+    '''
     le = LabelEncoder()
     le.fit_transform(unique_classes)
     return le
 
 def label_encoder_transform(unique_classes,_label_encoder):
+    '''
+    This routine helps transform unique classes to their numeric equivalent
+    unique_classes: list [] - unique set of classes to be mapped
+    _label_encoder: trained labelEncoder model
+    return: transformed numeric values for their corresponding classes
+    '''
     return _label_encoder.transform(unique_classes).astype(np.int32)
 
 class BERT_PREPROCESSING:
@@ -21,7 +32,7 @@ class BERT_PREPROCESSING:
     def __init__(self, model_layer, max_seq_length):
         '''
         model_layer: Model layer to be used to create the tokenizer for
-        return: tokenizer compatible with the model i.e. bert, albert etc.
+        max_seq_length: int - maximum number of tokens to keep in a sequence
         '''
         super(BERT_PREPROCESSING,self).__init__()
         self.model_layer = model_layer
@@ -42,16 +53,17 @@ class BERT_PREPROCESSING:
         return self.tokenizer.convert_tokens_to_ids(self.tokenizer.tokenize(text))
 
     def get_ids(self, tokens):
-        """Token ids from Tokenizer vocab"""
+        '''Token ids from Tokenizer vocab'''
         token_ids = self.tokenizer.convert_tokens_to_ids(tokens, )
         input_ids = token_ids + [0] * (self.max_seq_length - len(token_ids))
         return input_ids
 
     def get_masks(self, tokens):
+        '''Mask ids - 1 for valid tokens and 0 for padding'''
         return [1] * len(tokens) + [0] * (self.max_seq_length - len(tokens))
 
     def get_segments(self, tokens):
-        """Segments: 0 for the first sequence, 1 for the second"""
+        '''Segments: 0 for the first sequence, 1 for the second'''
         segments = []
         current_segment_id = 0
         for token in tokens:
@@ -61,6 +73,7 @@ class BERT_PREPROCESSING:
         return segments + [0] * (self.max_seq_length - len(tokens))
 
     def create_single_input(self, sentence, MAX_LEN):
+        '''creating model input for a sequence'''
         stokens = self.tokenizer.tokenize(sentence)
         stokens = stokens[:MAX_LEN]
         stokens = ["[CLS]"] + stokens + ["[SEP]"]
@@ -70,6 +83,7 @@ class BERT_PREPROCESSING:
         return ids, masks, segments
 
     def create_input_array(self, sentences):
+        '''creating model input array'''
         input_ids, input_masks, input_segments = [], [], []
         for sentence in tqdm(sentences, position=0, leave=True):
             ids, masks, segments = self.create_single_input(sentence, self.max_seq_length - 2)
@@ -81,6 +95,14 @@ class BERT_PREPROCESSING:
                 'input_type_ids': np.array(input_segments), }
 
     def get_tag_labels(self, sentence: str, sent_tags: str, slot_encoder):
+        '''
+        create an equivalent tag list corresponds to input ids by assigning first sub-tokens as main tag
+        and rest of the sub-tokens as O
+        sentence: str - query from seq.in file
+        sent_tags: str - corresponding tags from seq.out file
+        slot_encoder - slot label encoder to transform class to numeric values
+        return: list of transformed tags for the query
+        '''
         words = sentence.split()  # whitespace tokenizer
         tags = sent_tags.split()
         tags_extended = []
