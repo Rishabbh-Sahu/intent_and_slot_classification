@@ -17,6 +17,9 @@ To enable GPU support, please do enable CUDA-11 in windows/linux/mac virtual env
 - Training accuracy after 5-epoch : sequence acc ~ 99% and slot acc ~96%
 - Validation accuracy : sequence acc ~ 99% and slot acc ~96%
 
+#### Future scope
+Implementing Fast-tokenizer by Huggingface to expedite training data pre-processing by leveraging offset_mapping to create tags as per tokenizer's sub-token split.  
+
 #### Acknowledgement:
 @article https://arxiv.org/pdf/1805.10190.pdf
 {coucke2018snips, title = {Snips Voice Platform: an embedded Spoken Language Understanding system for private-by-design voice interfaces}, author = {Coucke, Alice and Saade, Alaa and Ball, Adrien and Bluche, Th{'e}odore and Caulier, Alexandre and Leroy, David and Doumouro, Cl{'e}ment and Gisselbrecht, Thibault and Caltagirone, Francesco and Lavril, Thibaut and others}, journal = {arXiv preprint arXiv:1805.10190}, pages = {12--16}, year = {2018}}
