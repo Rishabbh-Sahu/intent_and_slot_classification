@@ -4,7 +4,7 @@ One of the main NLU tasks is to understand the intent (sequence classification) 
 
 To enable GPU support, please do enable CUDA-11 in windows/linux/mac virtual environment for tf2.4 or use CUDA 10.1 for tf2.3. 
 
-A quike guide for installing Latest TensorFlow version 2.4 with CUDA 11, cudNN 8 and GPU support - Step by step tutorial 2021 - https://www.youtube.com/watch?v=hHWkvEcDBO0
+A quike guide for installing Latest TensorFlow version 2.4 with CUDA 11, cudNN 8 and GPU support: step by step tutorial 2021 - https://www.youtube.com/watch?v=hHWkvEcDBO0
 
 #### Getting started
 - create virtual environment
