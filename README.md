@@ -20,7 +20,8 @@ A quike guide for installing Latest TensorFlow version 2.4 with CUDA 11, cudNN 8
 - Validation accuracy : sequence acc ~ 99% and slot acc ~96%
 
 #### Future scope
-Implementing Fast-tokenizer by Huggingface to expedite training data pre-processing by leveraging offset_mapping to create tags as per tokenizer's sub-token split.  
+1) Implementing Fast-tokenizer by Huggingface to expedite training data pre-processing by leveraging offset_mapping to create tags as per tokenizer's sub-token split. 
+2) Using Flask, open up an 'End point' for testing the model and exposing it to Postman etc. to further query the model 
 
 #### Acknowledgement:
 @article https://arxiv.org/pdf/1805.10190.pdf
