@@ -7,6 +7,7 @@ import bert
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 from tqdm import tqdm
+from transformers import BertTokenizerFast
 
 def label_encoder(unique_classes):
     '''
@@ -122,3 +123,55 @@ class BERT_PREPROCESSING:
         else:
             tags_extended = tags_extended[:self.max_seq_length]
         return tags_extended
+
+
+class BERT_PREPROCESSING_FAST:
+
+    def __init__(self,max_seq_length, bert_model_name = 'bert-base-uncased'):
+        '''
+        model_layer: Model layer to be used to create the tokenizer for
+        max_seq_length: int - maximum number of tokens to keep in a sequence
+        '''
+        super(BERT_PREPROCESSING_FAST,self).__init__()
+        self.max_seq_length = max_seq_length
+        self.fastTokenizer = BertTokenizerFast.from_pretrained("bert-base-uncased")
+        # print('vocabulary_file:', type(vocab_file), '\nto_lower_case:', type(do_lower_case))
+        # print('tokenizer.vocab:', len(self.fastTokenizer.vocab))
+
+    def tokenize_text(self,text):
+        '''
+        param text: Text to tokenize
+        param tokenizer: tokenizer used for word splitting
+        return: stream of sub-tokens after tokenization
+        '''
+        return self.fastTokenizer.convert_tokens_to_ids(self.fastTokenizer.tokenize(text))
+
+    def create_model_input(self,encodings):
+        '''create numpy array as the model input from the transformer's encoded object'''
+        return {'input_word_ids': np.array(encodings.input_ids),
+                'input_mask': np.array(encodings.attention_mask),
+                'input_type_ids': np.array(encodings.token_type_ids),
+                }
+
+    def encode_tags(self, sent_tags: str, encodings, slot_encoder):
+        '''
+        Ref - # https://huggingface.co/transformers/master/custom_datasets.html#token-classification-with-w-nut-emerging-entities
+        create an equivalent tag list corresponds to input ids by assigning first sub-tokens as main tag
+        and rest of the sub-tokens as O
+        sent_tags: str - corresponding tags from seq.out file
+        encodings: fast tokenizer object - contains all the necessary inputs array for the sentences/query
+        slot_encoder - slot label encoder to transform class to numeric values
+        return: list of transformed tags for the query
+        '''
+        labels = [slot_encoder.transform(doc) for doc in sent_tags]
+        encoded_labels = []
+        for doc_labels, doc_offset, am in tqdm(zip(labels, encodings.offset_mapping, encodings.attention_mask),
+                                               position=0, leave=True):
+            # create an empty array of -100
+            doc_enc_labels = am * slot_encoder.transform(['O'])
+            arr_offset = np.array(doc_offset)
+            # set labels whose first offset position is 0 and the second is not 0
+            main_tokens_flags = (arr_offset[:, 0] == 0) & (arr_offset[:, 1] != 0)
+            doc_enc_labels[main_tokens_flags] = doc_labels[:sum(main_tokens_flags)]
+            encoded_labels.append(doc_enc_labels.tolist())
+        return encoded_labels
