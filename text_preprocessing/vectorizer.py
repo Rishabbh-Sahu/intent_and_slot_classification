@@ -153,7 +153,7 @@ class BERT_PREPROCESSING_FAST:
 
     def encode_tags(self, sent_tags: str, encodings, slot_encoder):
         '''
-        Ref - # https://huggingface.co/transformers/master/custom_datasets.html#token-classification-with-w-nut-emerging-entities
+        Ref - https://huggingface.co/transformers/master/custom_datasets.html#token-classification-with-w-nut-emerging-entities
         create an equivalent tag list corresponds to input ids by assigning first sub-tokens as main tag
         and rest of the sub-tokens as O
         sent_tags: str - corresponding tags from seq.out file
