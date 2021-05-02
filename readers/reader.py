@@ -20,13 +20,13 @@ class Reader:
         text_arr = None
         tags_arr = None
         with open(os.path.join(dataset_folder_path, 'label'), encoding='utf-8') as f:
-            labels = f.readlines()
+            labels = f.read().splitlines()
         
         with open(os.path.join(dataset_folder_path, 'seq.in'), encoding='utf-8') as f:
-            text_arr = f.readlines()
+            text_arr = f.read().splitlines()
         
         with open(os.path.join(dataset_folder_path, 'seq.out'), encoding='utf-8') as f:
-            tags_arr = f.readlines()
+            tags_arr = f.read().splitlines()
             
         assert len(text_arr) == len(tags_arr) == len(labels)
         return text_arr, tags_arr, labels

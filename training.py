@@ -33,19 +33,8 @@ val_text_arr, val_tags_arr, val_intents = Reader.read(data_path+'valid/')
 data_text_arr, data_tags_arr, data_intents = Reader.read(data_path+'test/')
 
 print('data pre-processing...')
-train_text_arr = preprocessing.remove_next_line(train_text_arr)
-train_tags_arr = preprocessing.remove_next_line(train_tags_arr)
-train_intents = preprocessing.remove_next_line(train_intents)
 print('train_text_arr', len(train_text_arr))
-
-val_text_arr = preprocessing.remove_next_line(val_text_arr)
-val_tags_arr = preprocessing.remove_next_line(val_tags_arr)
-val_intents = preprocessing.remove_next_line(val_intents)
 print('val_text_arr', len(val_text_arr))
-
-data_text_arr = preprocessing.remove_next_line(data_text_arr)
-data_tags_arr = preprocessing.remove_next_line(data_tags_arr)
-data_intents = preprocessing.remove_next_line(data_intents)
 print('Test data size :',len(data_text_arr))
 
 class_dist = Counter(train_intents)
