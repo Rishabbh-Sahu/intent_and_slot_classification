@@ -135,8 +135,6 @@ class BERT_PREPROCESSING_FAST:
         super(BERT_PREPROCESSING_FAST,self).__init__()
         self.max_seq_length = max_seq_length
         self.fastTokenizer = BertTokenizerFast.from_pretrained("bert-base-uncased")
-        # print('vocabulary_file:', type(vocab_file), '\nto_lower_case:', type(do_lower_case))
-        # print('tokenizer.vocab:', len(self.fastTokenizer.vocab))
 
     def tokenize_text(self,text):
         '''
