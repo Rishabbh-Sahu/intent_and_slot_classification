@@ -15,7 +15,7 @@ A quike guide for installing Latest TensorFlow version 2.4 with CUDA 11, cudNN 8
 #### For training
 - python training.py 
 
-#### Score
+#### Scores
 - Training accuracy after 5-epoch : sequence acc ~ 99% and slot acc ~96%
 - Validation accuracy : sequence acc ~ 99% and slot acc ~96%
 
