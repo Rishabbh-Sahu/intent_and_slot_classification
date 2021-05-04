@@ -23,7 +23,8 @@ With HF Fast-tokenizer - To expedite training data pre-processing by leveraging 
 - Validation accuracy : sequence acc ~ 99% and slot acc ~96%
 
 #### Future scope
-Using Flask, open up an 'End point' for testing the model and exposing it to Postman etc. to further query the model 
+1) Publish training accuracies using different benchmark data set called ATIS
+2) Using Flask, open up an 'End point' for testing the model and exposing it to Postman etc. to further query the model 
 
 #### Acknowledgement:
 @article https://arxiv.org/pdf/1805.10190.pdf
