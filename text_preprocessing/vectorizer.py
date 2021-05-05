@@ -124,7 +124,8 @@ class BERT_PREPROCESSING:
             tags_extended = tags_extended[:self.max_seq_length]
         return tags_extended
 
-
+# Used Huggingface Fast tokenizer class which can be used to differentiate 
+# between main subword vs rest if split of a word happens.
 class BERT_PREPROCESSING_FAST:
 
     def __init__(self,max_seq_length, bert_model_name = 'bert-base-uncased'):
