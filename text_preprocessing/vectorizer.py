@@ -125,7 +125,10 @@ class BERT_PREPROCESSING:
         return tags_extended
 
 # Used Huggingface Fast tokenizer class which can be used to differentiate 
-# between main subword vs rest if split of a word happens.
+# between main subword vs rest if split of a word happens. Its faster in a 
+# sense that, instead of running two for loops (Above), one to iterate over
+# sentences and another one to iterate over words (in that sentence), its just 
+# uses offset_mapping args to make the job easier for us by just using one for loop.
 class BERT_PREPROCESSING_FAST:
 
     def __init__(self,max_seq_length, bert_model_name = 'bert-base-uncased'):
