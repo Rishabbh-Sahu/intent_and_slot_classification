@@ -3,7 +3,7 @@
 
 Large transformers Bert, Roberta, XLnet .. a huge list, isn't it? Question we should ask ourselves: do we seriously need over 100's of Mn parameters to do classification or other similar tasks? Do we need these many attention layers?
 
-Answer lies within the amount of data to finetune i.e. data points to distinguish the number of unique classes and numerous patterns we may want to support. However, large transformers in general could take days to train and need massive amounts of data hence a long delay to access model performance.
+Answer lies within the amount of data to finetune i.e. data points to distinguish the number of unique classes and numerous patterns we may want to support. However, large transformers in general could take days to train and need massive amounts of data hence a long delay to access model performance. Getting this label data is not only very time consuming however resource intensive too.
 
 A very straightforward solution is to use Small/Tiny models, as small as having 2 attention layers with size <20MB. Now training few layers reduces training time significantly and we can gauge the model performance in a few hours. As a result, the scalability and deployment of NLP-based systems across the industry will become more attainable.
 
