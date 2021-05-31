@@ -9,7 +9,7 @@ A very straightforward solution is to use Small/Tiny models, as small as having 
 
 In order to demonstrate the same, I've choosed one of the very common NLU task is to understand intent (sequence classification) and slots (entities within the sequence) of a dialog and this repo helps you achieve the same with **very less resourece settings**. By extracting this knowledge about the queries/patterns, you can capture the context and take appropriate decisions. This repo help classify both together using **Joint Model architecture (multitask model)**. Pretrained model **BERT_SMALL** is used to achieve transfer learning however it can be changed to any other BERT variants.
 
-To enable GPU support, please do enable CUDA-11 in windows/linux/mac virtual environment for tf2.4 or use CUDA 10.1 for tf2.3. 
+To enable **GPU** support, please do enable **CUDA-11** in windows/linux/mac virtual environment for tf2.4 or use CUDA 10.1 for tf2.3. 
 
 A quike guide for installing Latest TensorFlow version 2.4 with CUDA 11, cudNN 8 and GPU support: step by step tutorial 2021 - https://www.youtube.com/watch?v=hHWkvEcDBO0
 
