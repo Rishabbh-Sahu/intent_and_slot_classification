@@ -26,8 +26,8 @@ With HF Fast-tokenizer - To expedite training data pre-processing by leveraging 
 - python training_fastTokenizer.py 
 
 #### Scores
-- **Training accuracy after 5-epoch : sequence acc ~ 99% and slot acc ~96%
-- **Validation accuracy : sequence acc ~ 99% and slot acc ~96%
+- **Training accuracy after 5-epoch : sequence acc ~ 99% and slot acc ~96%**
+- **Validation accuracy : sequence acc ~ 99% and slot acc ~96%**
 
 #### Future scope
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
