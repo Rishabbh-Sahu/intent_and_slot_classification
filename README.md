@@ -28,7 +28,7 @@ With HF Fast-tokenizer - To expedite training data pre-processing by leveraging 
 #### Scores
 - **Training accuracy after 5-epoch : sequence acc ~ 99% and slot acc ~96%**
 - **Validation accuracy : sequence acc ~ 99% and slot acc ~96%**<br>
-The above results shows, we might not need large transformer model (certainly 100Mn parameters are way too much) and yet achieve awesome results. 
+The above results shows, we might not need large transformer model (certainly 100Mn parameters are way too much) yet achieving very good results. 
 
 #### Future scope
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
