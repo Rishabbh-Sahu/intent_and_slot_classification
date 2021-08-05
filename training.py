@@ -16,6 +16,7 @@ from text_preprocessing import vectorizer,preprocessing
 from text_preprocessing.vectorizer import BERT_PREPROCESSING
 from model import JOINT_TEXT_MODEL
 
+# check for existing GPUs if any
 print("system specification...")
 print("TensorFlow Version:",tf.__version__)
 print("Hub version: ",hub.__version__)
