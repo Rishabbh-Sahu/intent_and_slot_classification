@@ -8,7 +8,6 @@ import os
 import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
-from collections import namedtuple
 from readers.reader import Reader
 from collections import Counter
 
