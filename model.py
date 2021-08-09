@@ -88,3 +88,5 @@ class JOINT_TEXT_MODEL():
         with open(os.path.join(saved_model_path, 'model_params.json'), 'w') as json_file:
             json.dump(self.model_params, json_file)
 
+    def load(self,saved_model_path):
+        return tf.saved_model.load(saved_model_path)

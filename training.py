@@ -10,6 +10,7 @@ import tensorflow_hub as hub
 import numpy as np
 from readers.reader import Reader
 from collections import Counter
+import pickle
 
 from text_preprocessing import vectorizer,preprocessing
 from text_preprocessing.vectorizer import BERT_PREPROCESSING
@@ -87,5 +88,10 @@ print(f'test query - {query}')
 print(f'Test query entities prediction:\n{pred_tags}')
 print(f'token level entity predictions:{[(word,tag) for word,tag in zip(model_tokenizer.tokenizer.tokenize(query),pred_tags)]}')
 
-print(f"Saving model and its config here - {os.path.join(config['saved_model_dir_path'],config['model_name'],config['model_version'])}")
-model.save(os.path.join(config['saved_model_dir_path'],config['model_name'],config['model_version']))
+saved_model_path = os.path.join(config['saved_model_dir_path'],config['model_name'],config['model_version'])
+print(f"Saving model and its configurations files here - {saved_model_path}")
+model.save(saved_model_path)
+with open(os.path.join(saved_model_path, 'slot_label_encoder.pkl'), 'wb') as handle:
+    pickle.dump(slot_encoder, handle, protocol=3)
+with open(os.path.join(saved_model_path, 'sequence_label_encoder.pkl'), 'wb') as handle:
+    pickle.dump(sequence_label_encoder, handle, protocol=3)
