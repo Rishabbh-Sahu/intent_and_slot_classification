@@ -19,6 +19,7 @@ app = Flask(__name__)
 
 #initialize the app
 def initialize():    
+    # Declare global variables to make them accessible throughout
     global model_tokenizer
     # initializing the model tokenizer to be used for creating sub-tokens
     model_tokenizer = BERT_PREPROCESSING_FAST(max_seq_length=config['MAX_SEQ_LEN'])
