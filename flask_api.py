@@ -17,6 +17,7 @@ from flask import Flask, jsonify, request
 # Create app
 app = Flask(__name__)
 
+#initialize the app
 def initialize():    
     global model_tokenizer
     # initializing the model tokenizer to be used for creating sub-tokens
