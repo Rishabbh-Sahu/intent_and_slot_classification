@@ -24,7 +24,7 @@ def initialize():
     # initializing the model tokenizer to be used for creating sub-tokens
     model_tokenizer = BERT_PREPROCESSING_FAST(max_seq_length=config['MAX_SEQ_LEN'])
 
-    # loading models
+    # loading models and necessary artifacts
     print('Loading models and artifacts...')
     if not os.path.exists(load_folder_path):
         print('Folder `%s` not exist' % load_folder_path)
