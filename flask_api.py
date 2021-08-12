@@ -52,7 +52,7 @@ def hello():
 def predict():
     input_json = request.json
     utterance = input_json["utterance"]
-
+    # Encode the input text using Huggingface fast tokenizer
     encodings = model_tokenizer.fastTokenizer([utterance.split()], is_split_into_words=True)
     input_txt = model_tokenizer.create_model_input(encodings)
     slots, intent = model.predict(input_txt)
