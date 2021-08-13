@@ -62,7 +62,7 @@ def predict():
     # Removing CLS and SEP tokens from the prediction
     pred_tags = slot_encoder.inverse_transform(list_without_pad[1:-1])
     annotations = [{word:tag} for word, tag in zip(model_tokenizer.fastTokenizer.tokenize(utterance), pred_tags)]
-
+    # create response to be seen as inference output 
     response = {
         "intent": {
             "name": str(predicted_intent[0]),
