@@ -38,6 +38,7 @@ def initialize():
         sequence_label_encoder = pickle.load(handle)
 
     global model
+    # Reading model parameters
     with open(os.path.join(load_folder_path, 'model_params.json'), 'r') as json_file:
         model_params = json.load(json_file)
     model = JOINT_TEXT_MODEL(slots_num=model_params['num_slot_classes'],intents_num=model_params['num_sequence_classes'],
