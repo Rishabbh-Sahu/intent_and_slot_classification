@@ -73,7 +73,7 @@ def predict():
     return jsonify(response)
 
 if __name__ == '__main__':
-
+    # Read the configuration we used while training the model
     configuration_file_path = 'config.yaml'
     config = {}
     config.update(Reader.read_yaml_from_file(configuration_file_path))
