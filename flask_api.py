@@ -35,6 +35,7 @@ def initialize():
         slot_encoder = pickle.load(handle)
 
     global sequence_label_encoder
+    # sequence encoder used before model training
     with open(os.path.join(load_folder_path, 'sequence_label_encoder.pkl'), 'rb') as handle:
         sequence_label_encoder = pickle.load(handle)
 
