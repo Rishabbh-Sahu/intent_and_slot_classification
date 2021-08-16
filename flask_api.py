@@ -30,6 +30,7 @@ def initialize():
         print('Folder `%s` not exist' % load_folder_path)
 
     global slot_encoder
+    # slot encoder used before model training
     with open(os.path.join(load_folder_path, 'slot_label_encoder.pkl'), 'rb') as handle:
         slot_encoder = pickle.load(handle)
 
