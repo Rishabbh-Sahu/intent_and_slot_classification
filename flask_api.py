@@ -12,7 +12,7 @@ import json
 from readers.reader import Reader
 from text_preprocessing.vectorizer import BERT_PREPROCESSING_FAST
 from model import JOINT_TEXT_MODEL
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request ## Important module to create and expose end points
 
 # Create app
 app = Flask(__name__)
