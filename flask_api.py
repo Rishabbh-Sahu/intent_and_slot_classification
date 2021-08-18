@@ -73,7 +73,7 @@ def predict():
         "algo": "Joint text model",
         "annotations": annotations
     }
-    return jsonify(response)
+    return jsonify(response) # use Postman app or Curl to get the model response
 
 if __name__ == '__main__':
     # Read the configuration we used while training the model
