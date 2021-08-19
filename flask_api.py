@@ -43,6 +43,7 @@ def initialize():
     # Reading model parameters saved while training the model
     with open(os.path.join(load_folder_path, 'model_params.json'), 'r') as json_file:
         model_params = json.load(json_file)
+    # Initiate the model object with the same architecture     
     model = JOINT_TEXT_MODEL(slots_num=model_params['num_slot_classes'],intents_num=model_params['num_sequence_classes'],
                              model_path=model_params['model_path'],learning_rate=model_params['learning_rate'])
     model.load(load_folder_path)
