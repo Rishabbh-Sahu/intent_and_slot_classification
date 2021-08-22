@@ -30,6 +30,10 @@ With HF Fast-tokenizer - To expedite training data pre-processing by leveraging 
 - **Validation accuracy : sequence acc ~ 99% and slot acc ~96%**<br>
 The above results shows, we might not need large transformer model (certainly 100Mn parameters are way too much) yet achieving very good results. 
 
+#### Inference
+- python flask_api.py 
+
+
 #### Future scope
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
 2) Using Flask, open up an 'End point' for testing the model and exposing it to Postman etc. to further query the model 
