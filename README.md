@@ -33,7 +33,7 @@ The above results shows, we might not need large transformer model (certainly 10
 #### Inference
 For quering the model, use the below command to open flaskAPI- 
 - python flask_api.py <br>
-The above command opens up the local server which is accessible thru Postman app. 
+The above command opens up the local server which is accessible thru Postman app or CURL command.
 
 #### Future scope
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
