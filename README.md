@@ -32,7 +32,7 @@ The above results shows, we might not need large transformer model (certainly 10
 
 #### Inference
 For quering the model, use the below command to open flaskAPI- 
-- python flask_api.py 
+- python flask_api.py <br>
 The above command opens up the local server which is accessible thru Postman app. 
 
 #### Future scope
