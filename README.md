@@ -31,6 +31,7 @@ With HF Fast-tokenizer - To expedite training data pre-processing by leveraging 
 The above results shows, we might not need large transformer model (certainly 100Mn parameters are way too much) yet achieving very good results. 
 
 #### Inference
+For quering the model, use the below command to open flaskAPI - 
 - python flask_api.py 
 
 
