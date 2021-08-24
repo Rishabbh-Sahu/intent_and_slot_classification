@@ -38,7 +38,7 @@ The above command opens up the local server which is accessible thru Postman app
 
 #### Future scope
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
-2) Support for various models like albert, mobilebert etc.  
+2) Support for various models like albert, mobilebert, distilbert etc.  
 
 #### Acknowledgement:
 @article https://arxiv.org/pdf/1805.10190.pdf
