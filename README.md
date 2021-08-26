@@ -35,10 +35,9 @@ For quering the model, use the below command to open flaskAPI-
 - python flask_api.py <br>
 The above command opens up the local server which is accessible thru Postman app or CURL command. Port can be changed in the script and same can be used while quering the model. <br>
 The format to query the model - 
-{
-   "utterance":"could you please play songs from james blunt"
-}
 ![image](https://user-images.githubusercontent.com/69572197/130914705-064dcd6e-99b2-4c3e-a386-92915fc92187.png)
+
+Change utterance value to test different queries.
 
 #### Future scope
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
