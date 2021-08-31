@@ -48,6 +48,7 @@ def initialize():
                              model_path=model_params['model_path'],learning_rate=model_params['learning_rate'])
     model.load(load_folder_path)
 
+# Default landing page with caption
 @app.route('/', methods=['GET', 'POST'])
 def hello():
     return 'Hello from NLU inference routine'
