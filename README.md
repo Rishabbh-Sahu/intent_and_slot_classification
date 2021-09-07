@@ -34,10 +34,10 @@ The above results shows, we might not need large transformer model (certainly 10
 For quering the model, use the below command to open **flaskAPI**- 
 - python flask_api.py <br>
 The above command opens up the local server which is accessible thru Postman app or CURL command. Port can be changed in the script and same can be used while quering the model. <br><br>
-**Input format** to query the model via Postman app- <br>
+Input format to query the model via Postman app- <br>
 ![image](https://user-images.githubusercontent.com/69572197/130914705-064dcd6e-99b2-4c3e-a386-92915fc92187.png)<br>
 Change utterance value to test different queries.<br>
-**Input format** to query the model via CURL command - <br>
+Input format to query the model via CURL command - <br>
 curl --location --request POST 'http://192.168.1.32:8888/predict' --header 'Content-Type: application/json' --data-raw '{"utterance": "what is the weather in jabalpur tomorrow"
 }'
 
