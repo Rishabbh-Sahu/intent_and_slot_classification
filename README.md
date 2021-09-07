@@ -38,9 +38,7 @@ Input format to query the model via **Postman app**- <br>
 ![image](https://user-images.githubusercontent.com/69572197/130914705-064dcd6e-99b2-4c3e-a386-92915fc92187.png)<br>
 Change utterance value to test different queries.<br>
 Input format to query the model via **CURL command** - <br>
-curl --location --request POST 'http://192.168.1.32:8888/predict' --header 'Content-Type: application/json' --data-raw '{"utterance": "what is the weather in jabalpur tomorrow"
-}'
-
+curl --location --request POST 'http://192.168.1.32:8888/predict' --header 'Content-Type: application/json' --data-raw '{"utterance": "what is the weather in london"}'
 
 #### Future scope
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
