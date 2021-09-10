@@ -38,6 +38,7 @@ The above command opens up the local server which is accessible thru Postman app
 ![image](https://user-images.githubusercontent.com/69572197/130914705-064dcd6e-99b2-4c3e-a386-92915fc92187.png)<br>
     - Input format to query the model via **CURL Command**- <br>
 curl --location --request POST 'http://ip-address-of-your-mc:8888/predict' --header 'Content-Type: application/json' --data-raw '{"utterance": "what is the weather in london"}'<br>
+
 *Change utterance value to test different queries*
 
 #### Future scope
