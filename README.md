@@ -31,7 +31,7 @@ With HF Fast-tokenizer - To expedite training data pre-processing by leveraging 
 The above results shows, we might not need large transformer model (certainly 100Mn parameters are way too much) yet achieving very good results. 
 
 #### Inference
-For quering the model, use the below command to open **flaskAPI**- 
+For quering the model, use the below command to open **flaskAPI**- <br>
 python flask_api.py <br>
 The above command opens up the local server which is accessible thru Postman app or CURL command (listed below). Port can be changed in the script and same can be used while quering the model. <br>
 - Input format to query the model via **Postman App**- <br>
