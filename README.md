@@ -5,7 +5,7 @@ Large transformers Bert, Roberta, XLnet .. a huge list, isn't it? Question we sh
 
 Answer lies within the amount of data to finetune i.e. data points to distinguish the number of unique classes and numerous patterns we may want to support. However, large transformers in general could take days to train and need massive amounts of data hence a long delay to access model performance. Getting this label data is not only very time consuming however resource intensive too.
 
-A very straightforward solution is to use Small/Tiny models, as small as having 2 attention layers with size <20MB. Now training few layers reduces training time significantly and we can gauge the model performance in a few hours. As a result, the scalability and deployment of NLP-based systems across the industry will become more attainable.
+A very straightforward solution is to use Small/Tiny models, **as small as having 2 attention layers with size <20MB**. Now training few layers reduces training time significantly and we can gauge the model performance in a few hours. As a result, the scalability and deployment of NLP-based systems across the industry will become more attainable.
 
 In order to demonstrate the same, I've choosed one of the very common NLU task is to understand intent (sequence classification) and slots (entities within the sequence) of a dialog and this repo helps you achieve the same with **very less resourece settings**. By extracting this knowledge about the queries/patterns, you can capture the context and take appropriate decisions. This repo help classify both together using **Joint model architecture (multitask model)**. Pretrained model **BERT_SMALL** is used to achieve transfer learning however it can be changed to any other BERT variants.
 
