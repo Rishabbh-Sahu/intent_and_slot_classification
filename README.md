@@ -22,7 +22,7 @@ A quike guide for installing Latest TensorFlow version 2.4 with CUDA 11, cudNN 8
 #### For training
 - python training.py 
 
-With HF Fast-tokenizer - To expedite training data pre-processing by leveraging offset_mapping to create tags as per tokenizer's sub-token split, use below command
+With **HF Fast-tokenizer** - To expedite training data pre-processing by leveraging offset_mapping to create tags as per tokenizer's sub-token split, use below command
 - python training_fastTokenizer.py 
 
 #### Scores
