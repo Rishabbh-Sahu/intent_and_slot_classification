@@ -26,7 +26,7 @@ With **HF Fast-tokenizer** - To expedite training data pre-processing by leverag
 - python training_fastTokenizer.py 
 
 #### Scores
-- **Training accuracy after 5-epoch : sequence acc ~ 99% and slot acc ~96%**
+- **Training accuracy** after 5-epoch : **sequence acc ~ 99% and slot acc ~96%**
 - **Validation accuracy : sequence acc ~ 99% and slot acc ~96%**<br>
 The above results shows, we might not need large transformer model (certainly 100Mn parameters are way too much) yet achieving very good results. 
 
