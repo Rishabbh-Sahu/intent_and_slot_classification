@@ -7,7 +7,7 @@ Answer lies within the amount of data to finetune i.e. data points to distinguis
 
 A very straightforward solution is to use small/tiny models, **as small as having 2 attention layers with size <20MB**. Now training few layers reduces training time significantly and we can gauge the model performance in a few hours. As a result, **the scalability and deployment of NLP-based systems across the industry will become more attainable**.
 
-In order to demonstrate the same, I've choosed one of the very common NLU task is to understand intent (sequence classification) and slots (entities within the sequence) of a dialog and this repo helps you achieve the same with **very less resourece settings**. By extracting this knowledge about the queries/patterns, you can capture the context and take appropriate decisions. This repo help classify both together using **Joint model architecture (multitask model)**. Pretrained model **BERT_SMALL** is used to achieve transfer learning however it can be changed to any other BERT variants.
+In order to demonstrate the same, I've choosed one of the very common NLU task is to understand intent (sequence classification) and slots (entities within the sequence) of a dialog and this repo helps you achieve the same with **very little resource settings**. By extracting this knowledge about the queries/patterns, you can capture the context and take appropriate decisions. This repo help classify both together using **Joint model architecture (multitask model)**. Pretrained model **BERT_SMALL** is used to achieve transfer learning however it can be changed to any other BERT variants.
 
 To enable **GPU** support, please do enable **CUDA-11** in windows/linux/mac virtual environment for tf2.4 or use CUDA 10.1 for tf2.3. 
 
