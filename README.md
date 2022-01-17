@@ -20,7 +20,9 @@ A quike guide for installing Latest TensorFlow version 2.4 with CUDA 11, cudNN 8
 - Open config.yaml file and modify parameters as per your setup
 
 #### For training
-- python training.py 
+```
+python training.py 
+```
 
 With **HF Fast-tokenizer** - To expedite training data pre-processing by leveraging offset_mapping to create tags as per tokenizer's sub-token split, use below command
 - python training_fastTokenizer.py 
