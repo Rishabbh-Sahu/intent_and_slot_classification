@@ -25,8 +25,9 @@ python training.py
 ```
 
 With **HF Fast-tokenizer** - To expedite training data pre-processing by leveraging offset_mapping to create tags as per tokenizer's sub-token split, use below command
-- python training_fastTokenizer.py 
-
+```
+python training_fastTokenizer.py 
+```
 #### Scores
 After 5-epoch
 - **Training accuracy : sequence acc ~ 99% and slot acc ~96%**
