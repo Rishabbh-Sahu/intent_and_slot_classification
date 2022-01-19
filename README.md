@@ -50,7 +50,7 @@ curl --location --request POST 'http://ip-address-of-your-mc:8888/predict' --hea
 1) Publish training accuracies using different benchmark data set called ATIS (Data pertaining to Flight domain)
 2) Support for various models like albert, mobilebert, distilbert etc.  
 
-#### Acknowledgement:
+#### Acknowledgement
 @article https://arxiv.org/pdf/1805.10190.pdf
 {coucke2018snips, title = {Snips Voice Platform: an embedded Spoken Language Understanding system for private-by-design voice interfaces}, author = {Coucke, Alice and Saade, Alaa and Ball, Adrien and Bluche, Th{'e}odore and Caulier, Alexandre and Leroy, David and Doumouro, Cl{'e}ment and Gisselbrecht, Thibault and Caltagirone, Francesco and Lavril, Thibaut and others}, journal = {arXiv preprint arXiv:1805.10190}, pages = {12--16}, year = {2018}}
 
