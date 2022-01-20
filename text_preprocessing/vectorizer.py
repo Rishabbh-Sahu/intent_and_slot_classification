@@ -22,7 +22,7 @@ def label_encoder(unique_classes):
 def label_encoder_transform(unique_classes,_label_encoder):
     '''
     This routine helps transform unique classes to their numeric equivalent
-    unique_classes: list [] - unique set of classes to be mapped
+    unique_classes: list [], unique set of classes to be mapped
     _label_encoder: trained labelEncoder model
     return: transformed numeric values for their corresponding classes
     '''
