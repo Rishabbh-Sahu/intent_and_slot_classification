@@ -13,12 +13,12 @@ import os
 
 class JOINT_TEXT_MODEL():
     def __init__(self, slots_num, intents_num, model_path, learning_rate, name='text_classification'):
-        '''
+        """
         Defining joint model to consider sequence and slot classification tasks together. 
         Loss = weight1 * sequence prediction loss + weight2 * slot prediction loss 
         weight1 and weight2 are the weights assigned to sequence and slot prediction tasks to 
         calculate the final loss. 
-        '''
+        """
         super(JOINT_TEXT_MODEL, self).__init__()
 
         self.model = None
