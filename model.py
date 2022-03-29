@@ -71,10 +71,10 @@ class JOINT_TEXT_MODEL():
         self.model = Model(inputs=inputs, outputs=[slot_classifier, sequence_classifier], name=self.name)
 
     def fit(self, train_X, train_Y, validation_data=None, epochs=5, batch_size=16):
-        '''
+        """
         model_input = {input_word_ids,input_mask,input_type_ids} #dict
         model_output = [sequence prediction , [token wise slot prediction]]
-        '''
+        """
         self.model_params.update({'epochs': epochs, 'batch_size': batch_size})
         history = self.model.fit(train_X, train_Y, validation_data=validation_data,
                                  epochs=epochs, batch_size=batch_size, shuffle=False, verbose=2)
