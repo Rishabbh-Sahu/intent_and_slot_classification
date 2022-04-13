@@ -10,22 +10,22 @@ from tqdm import tqdm
 from transformers import BertTokenizerFast
 
 def label_encoder(unique_classes):
-    '''
+    """
     This routine helps establish the mapping of unique classes to their numeric equivalent
     unique_classes: list [] - unique set of classes to be mapped
     return: model fitted on unique classes to transform where ever required
-    '''
+    """
     le = LabelEncoder()
     le.fit_transform(unique_classes)
     return le
 
 def label_encoder_transform(unique_classes,_label_encoder):
-    '''
+    """
     This routine helps transform unique classes to their numeric equivalent
     unique_classes: list [], unique set of classes to be mapped
     _label_encoder: trained labelEncoder model
     return: transformed numeric values for their corresponding classes
-    '''
+    """
     return _label_encoder.transform(unique_classes).astype(np.int32)
 
 class BERT_PREPROCESSING:
