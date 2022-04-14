@@ -31,10 +31,10 @@ def label_encoder_transform(unique_classes,_label_encoder):
 class BERT_PREPROCESSING:
 
     def __init__(self, model_layer, max_seq_length):
-        '''
+        """
         model_layer: Model layer to be used to create the tokenizer for
         max_seq_length: int - maximum number of tokens to keep in a sequence
-        '''
+        """
         super(BERT_PREPROCESSING,self).__init__()
         self.model_layer = model_layer
         self.max_seq_length = max_seq_length
