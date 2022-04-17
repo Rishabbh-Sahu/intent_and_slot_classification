@@ -46,11 +46,11 @@ class BERT_PREPROCESSING:
         print('tokenizer.vocab:', len(self.tokenizer.vocab))
 
     def tokenize_text(self,text):
-        '''
+        """
         param text: Text to tokenize
         param tokenizer: tokenizer used for word splitting
         return: stream of sub-tokens after tokenization
-        '''
+        """
         return self.tokenizer.convert_tokens_to_ids(self.tokenizer.tokenize(text))
 
     def get_ids(self, tokens):
