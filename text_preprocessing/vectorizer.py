@@ -54,7 +54,7 @@ class BERT_PREPROCESSING:
         return self.tokenizer.convert_tokens_to_ids(self.tokenizer.tokenize(text))
 
     def get_ids(self, tokens):
-        '''Token ids from Tokenizer vocab'''
+        """Token ids from Tokenizer vocab"""
         token_ids = self.tokenizer.convert_tokens_to_ids(tokens, )
         input_ids = token_ids + [0] * (self.max_seq_length - len(token_ids))
         return input_ids
