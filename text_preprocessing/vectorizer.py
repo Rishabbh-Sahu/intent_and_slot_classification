@@ -60,7 +60,7 @@ class BERT_PREPROCESSING:
         return input_ids
 
     def get_masks(self, tokens):
-        '''Mask ids - 1 for valid tokens and 0 for padding'''
+        """Mask ids - 1 for valid tokens and 0 for padding"""
         return [1] * len(tokens) + [0] * (self.max_seq_length - len(tokens))
 
     def get_segments(self, tokens):
