@@ -64,7 +64,7 @@ class BERT_PREPROCESSING:
         return [1] * len(tokens) + [0] * (self.max_seq_length - len(tokens))
 
     def get_segments(self, tokens):
-        '''Segments: 0 for the first sequence, 1 for the second'''
+        """Segments: 0 for the first sequence, 1 for the second"""
         segments = []
         current_segment_id = 0
         for token in tokens:
