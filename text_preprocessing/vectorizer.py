@@ -84,7 +84,7 @@ class BERT_PREPROCESSING:
         return ids, masks, segments
 
     def create_input_array(self, sentences):
-        '''creating model input array'''
+        """Creating model input array"""
         input_ids, input_masks, input_segments = [], [], []
         for sentence in tqdm(sentences, position=0, leave=True):
             ids, masks, segments = self.create_single_input(sentence, self.max_seq_length - 2)
