@@ -74,7 +74,7 @@ class BERT_PREPROCESSING:
         return segments + [0] * (self.max_seq_length - len(tokens))
 
     def create_single_input(self, sentence, MAX_LEN):
-        """creating model input for a sequence"""
+        """Creating model input for a sequence"""
         stokens = self.tokenizer.tokenize(sentence)
         stokens = stokens[:MAX_LEN]
         stokens = ["[CLS]"] + stokens + ["[SEP]"]
