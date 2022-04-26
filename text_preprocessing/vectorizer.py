@@ -96,14 +96,14 @@ class BERT_PREPROCESSING:
                 'input_type_ids': np.array(input_segments), }
 
     def get_tag_labels(self, sentence: str, sent_tags: str, slot_encoder):
-        '''
+        """
         create an equivalent tag list corresponds to input ids by assigning first sub-tokens as main tag
         and rest of the sub-tokens as O
         sentence: str - query from seq.in file
         sent_tags: str - corresponding tags from seq.out file
         slot_encoder - slot label encoder to transform class to numeric values
         return: list of transformed tags for the query
-        '''
+        """
         words = sentence.split()  # whitespace tokenizer
         tags = sent_tags.split()
         tags_extended = []
