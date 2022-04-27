@@ -132,10 +132,10 @@ class BERT_PREPROCESSING:
 class BERT_PREPROCESSING_FAST:
 
     def __init__(self,max_seq_length, bert_model_name = 'bert-base-uncased'):
-        '''
+        """
         model_layer: Model layer to be used to create the tokenizer for
         max_seq_length: int - maximum number of tokens to keep in a sequence
-        '''
+        """
         super(BERT_PREPROCESSING_FAST,self).__init__()
         self.max_seq_length = max_seq_length
         self.fastTokenizer = BertTokenizerFast.from_pretrained("bert-base-uncased")
