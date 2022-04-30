@@ -141,11 +141,11 @@ class BERT_PREPROCESSING_FAST:
         self.fastTokenizer = BertTokenizerFast.from_pretrained("bert-base-uncased")
 
     def tokenize_text(self,text):
-        '''
+        """
         param text: Text to tokenize
         param tokenizer: tokenizer used for word splitting
         return: stream of sub-tokens after tokenization
-        '''
+        """
         return self.fastTokenizer.convert_tokens_to_ids(self.fastTokenizer.tokenize(text))
 
     def create_model_input(self,encodings):
