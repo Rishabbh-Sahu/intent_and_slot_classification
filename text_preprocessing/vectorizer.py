@@ -149,7 +149,7 @@ class BERT_PREPROCESSING_FAST:
         return self.fastTokenizer.convert_tokens_to_ids(self.fastTokenizer.tokenize(text))
 
     def create_model_input(self,encodings):
-        '''create numpy array as the model input from the transformer's encoded object'''
+        """create numpy array as the model input from the transformer's encoded object"""
         return {'input_word_ids': np.array(encodings.input_ids),
                 'input_mask': np.array(encodings.attention_mask),
                 'input_type_ids': np.array(encodings.token_type_ids),
