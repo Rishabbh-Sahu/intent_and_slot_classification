@@ -156,7 +156,7 @@ class BERT_PREPROCESSING_FAST:
                 }
 
     def encode_tags(self, sent_tags: str, encodings, slot_encoder):
-        '''
+        """
         Ref - https://huggingface.co/transformers/master/custom_datasets.html#token-classification-with-w-nut-emerging-entities
         create an equivalent tag list corresponds to input ids by assigning first sub-tokens as main tag
         and rest of the sub-tokens as O
@@ -164,7 +164,7 @@ class BERT_PREPROCESSING_FAST:
         encodings: fast tokenizer object - contains all the necessary inputs array for the sentences/query
         slot_encoder - slot label encoder to transform class to numeric values
         return: list of transformed tags for the query
-        '''
+        """
         labels = [slot_encoder.transform(doc) for doc in sent_tags]
         encoded_labels = []
         for doc_labels, doc_offset, am in tqdm(zip(labels, encodings.offset_mapping, encodings.attention_mask),
