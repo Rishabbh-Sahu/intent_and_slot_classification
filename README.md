@@ -1,4 +1,4 @@
-# intent_and_slot_classification
+# <p align="center"> intent_and_slot_classification </p>
 #### About this project
 
 Large transformers Bert, Roberta, XLnet .. a huge list, isn't it? Question we should ask ourselves: do we seriously need over 100's of Mn parameters to do classification or other similar tasks? Do we need these many attention layers?
